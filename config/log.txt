@@ -1,0 +1,16 @@
+十月 12, 2013 8:52:59 下午 twitter.crawler.util.MyLogger log
+INFO: java.lang.NullPointerException
+十月 12, 2013 8:52:59 下午 twitter.crawler.util.MyLogger log
+INFO: java.lang.NullPointerException
+十月 12, 2013 8:52:59 下午 twitter.crawler.util.MyLogger log
+INFO: java.lang.NullPointerException
+十月 12, 2013 8:52:59 下午 twitter.crawler.util.MyLogger log
+INFO: java.lang.NullPointerException
+十月 12, 2013 8:52:59 下午 twitter.crawler.util.MyLogger log
+INFO: java.lang.NullPointerException
+十月 12, 2013 8:52:59 下午 twitter.crawler.util.MyLogger log
+INFO: java.lang.NullPointerException
+十月 12, 2013 8:52:59 下午 twitter.crawler.util.MyLogger log
+INFO: java.lang.NullPointerException
+十月 12, 2013 8:52:59 下午 twitter.crawler.util.MyLogger log
+INFO: java.lang.NullPointerException

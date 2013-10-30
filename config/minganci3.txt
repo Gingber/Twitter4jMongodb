@@ -1,0 +1,12 @@
+city
+country
+Cairo
+Egypt
+Japan
+Libya
+Tokyo
+Dallas
+Vancouver
+Hawaii
+Joplin
+Austin
