@@ -28,7 +28,7 @@ import twitter4j.json.DataObjectFactory;
  *
  * @author Yusuke Yamamoto - yusuke at mac.com
  */
-public final class TwitterSearch {
+public final class SearchTwitter {
     /**
      * Main entry of this application.
      *
@@ -49,7 +49,7 @@ public final class TwitterSearch {
 		 */
 		mongo = new Mongo("localhost", 27017);
     	DB db = mongo.getDB("TwitterRT");
-    	collection = db.getCollection("retweet_concrete2");
+    	collection = db.getCollection("kittens");
     	System.out.println("Link Mongodb!");
 	}
 	
@@ -104,9 +104,6 @@ public final class TwitterSearch {
 
     public static void main(String[] args) throws TwitterException, JSONException, InterruptedException {
     	
-    	System.getProperties().put("http.proxyHost", "127.0.0.1");
-        System.getProperties().put("http.proxyPort", "8580");
-        
     	final TwitterSearch pr = new TwitterSearch();
     	
     	try {
@@ -117,16 +114,19 @@ public final class TwitterSearch {
     	
     	ConfigurationBuilder cb = new ConfigurationBuilder();
      	cb.setDebugEnabled(true)
+     	  .setHttpProxyHost("127.0.0.1")
+     	  .setHttpProxyPort(8580)
+     	  .setAsyncNumThreads(10)
      	  .setGZIPEnabled(false)
      	  .setHttpConnectionTimeout(10000000)
      	  .setHttpReadTimeout(3600000)
      	  .setHttpRetryCount(100)
      	  .setUseSSL(false)
-     	  .setOAuthConsumerKey("7ZVgfKiOvBDcDFpytRWSA")
-     	  .setOAuthConsumerSecret("JmeJVeym78arzmGthrDUshQyhkq6nWA9tWLUKxc")
-     	  .setOAuthAccessToken("321341780-Zy7LptVYBZBVvAeQ5GFJ4aKFw8sdqhWBnvA3pDuO")
-     	  .setOAuthAccessTokenSecret("foi8FnQCeN0J5cdwad05Q6d7dbytFayQn1ZOvmhF6Qc");
-     	cb.setJSONStoreEnabled(true);
+     	  .setOAuthConsumerKey("1wNzFR8mlvcS3DFX10O3w")
+   	  	  .setOAuthConsumerSecret("V9w1vWHUIHf0jm7LA65l4os9OvYvx9S9R4AEFUs")
+   	  	  .setOAuthAccessToken("1588047948-Y1uss1iZafQYnBuaOVY3jzPoEBHCgIfst7JbFDw")
+   	  	  .setOAuthAccessTokenSecret("6XU1ehBD4BPFmJaGR0VHBcd1yqaaIsqwvQERZzA")
+     	  .setJSONStoreEnabled(true);
      	
      	//TwitterStreamFactory tf = new TwitterStreamFactory(cb.build());
      	TwitterFactory tf = new TwitterFactory(cb.build());
@@ -140,7 +140,8 @@ public final class TwitterSearch {
         		 //Query query =new Query("The next journal. Sunday at midnight. #rollercoaster #musicmondays http://instagram.com/p/hCaYRZgvmW/");
         		 //Query query = new Query("If you can't make it to the Grove get #StayingStrong at http://bit.ly/StayingStrongBook "); 
         		 //Query query = new Query("Skaters be like \" you can\'t skate\". http://instagram.com/p/hC_qZvAvme/");
-        		Query query = new Query("Check out #PauFactor from my girl @paurubio");
+        		//Query query = new Query("Less than #4hours until #changeme");
+        		Query query = new Query("KITTENS! Click here");
         		query.setCount(100);
 	        	QueryResult result = twitter.search(query);
 	   			 do {
